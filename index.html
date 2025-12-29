@@ -2,160 +2,235 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Bullshitbox</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Deterministic behavioral automation: record raw input, propose actions, replay in a testbed, validate outcomes.">
-  <meta name="robots" content="index,follow">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Bullshitbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Bullshitbox automates brittle UI workflows with the Seven Steps Validation Loop and deterministic validation.">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <main class="wrap">
-
-    <header class="hero">
-      <div class="kicker">Bullshitbox</div>
-      <h1>Turn messy human intent into deterministic actions.</h1>
-      <p class="lede">
-        Bullshitbox records raw interaction signals, proposes repeatable actions, replays them in a deterministic
-        testbed,
-        and validates outcomes with assertions. When the world is ambiguous, it escalates to humans.
-      </p>
-
-      <div class="cta">
-        <a class="btn primary" href="mailto:contact@bullshitbox.ai">contact@bullshitbox.ai</a>
-        <a class="btn" href="https://levelzerocontext.com">Level Zero Context</a>
-      </div>
-
-      <p class="fine">Static site. No tracking. No cookies. No external assets.</p>
-    </header>
-
-    <section class="story" aria-label="Scroll narrative">
-      <div class="story-intro">
-        <h2>The validation-first automation loop</h2>
-        <p>
-          Scroll to step through the system. Each stage has its own surface and evidence.
-          The goal is not more automation. The goal is reproducible correctness.
-        </p>
-      </div>
-
-      <div class="panels" role="region" aria-label="Stages">
-        <article class="panel" data-stage="record" aria-label="Record">
-          <div class="panel-overlay"></div>
-          <div class="panel-content">
-            <div class="panel-eyebrow">Stage 1</div>
-            <h3>Record</h3>
-            <p>
-              Capture raw events: mouse, keyboard, focus changes, timing. Nothing is interpreted yet.
-              This is the only way to keep later abstraction honest.
+    <main class="page">
+        <header class="hero hero-sticky">
+            <p class="hero-eyebrow">Bullshitbox</p>
+            <h1>Validated automation from raw behavior.</h1>
+            <p class="hero-lede">
+                Bullshitbox runs the Seven Steps Validation Loop: observe, contextualize, propose, replay, validate, confirm, integrate. Every action is replayable, evidence-backed, and gated by PASS/FAIL/NEED_HUMAN.
             </p>
-            <ul>
-              <li>Raw event stream only</li>
-              <li>Timestamped + ordered</li>
-              <li>No “helpful” assumptions</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="panel" data-stage="propose" aria-label="Propose">
-          <div class="panel-overlay"></div>
-          <div class="panel-content">
-            <div class="panel-eyebrow">Stage 2</div>
-            <h3>Propose</h3>
-            <p>
-              Group signals into candidate actions with context cues and confidence.
-              Multiple hypotheses are allowed. Hand-wavy certainty is not.
+            <p class="hero-cta">
+                <a href="mailto:contact@bullshitbox.ai">contact@bullshitbox.ai</a>
+                <span>·</span>
+                <small>Validated meaning infrastructure · no guesswork</small>
             </p>
-            <ul>
-              <li>Action candidates + rationale</li>
-              <li>Context signals (targets, modifiers, focus)</li>
-              <li>Confidence + evidence attached</li>
-            </ul>
-          </div>
-        </article>
+        </header>
 
-        <article class="panel" data-stage="replay" aria-label="Replay">
-          <div class="panel-overlay"></div>
-          <div class="panel-content">
-            <div class="panel-eyebrow">Stage 3</div>
-            <h3>Replay</h3>
-            <p>
-              Execute proposed actions inside a deterministic testbed.
-              Same inputs, same layout, same state expectations. Reproducibility is the feature.
-            </p>
-            <ul>
-              <li>Fixed-position GUI reference environment</li>
-              <li>Known window geometry + UI layout</li>
-              <li>State snapshot after replay</li>
-            </ul>
-          </div>
-        </article>
+        <details class="fold fold-loop">
+            <summary>How it works</summary>
+            <div class="fold-content">
+                <section class="scrolly" aria-label="Seven Steps Validation Loop">
 
-        <article class="panel" data-stage="validate" aria-label="Validate">
-          <div class="panel-overlay"></div>
-          <div class="panel-content">
-            <div class="panel-eyebrow">Stage 4</div>
-            <h3>Validate</h3>
-            <p>
-              Assert outcomes and invariants.
-              If it can’t be validated, it doesn’t get promoted.
-              When ambiguity remains, the system asks a human.
-            </p>
-            <ul>
-              <li>PASS / FAIL / NEED_HUMAN</li>
-              <li>Assertions + invariants</li>
-              <li>Drift detection over time</li>
-            </ul>
-          </div>
-        </article>
+                    <article class="stage stage-observe" data-stage="observe">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 01</p>
+                            <h2>Observe</h2>
+                            <div class="stage-sub" lang="de">Rohereignisse ohne Interpretation</div>
+                            <p>
+                                Sensors, transcripts, and operator telemetry arrive in a tamper-evident ledger before any
+                                inference. Timestamped, ordered, and forensic, this record guards later abstractions.
+                            </p>
+                            <ul>
+                                <li>Immutable event ledger with nanosecond resolution.</li>
+                                <li>Parallel capture of signal, transcripts, and operator notes.</li>
+                                <li>Audit tokens tie every datum to its origin.</li>
+                            </ul>
+                        </div>
+                    </article>
 
-        <article class="panel" data-stage="integrate" aria-label="Integrate">
-          <div class="panel-overlay"></div>
-          <div class="panel-content">
-            <div class="panel-eyebrow">Stage 5</div>
-            <h3>Integrate</h3>
-            <p>
-              Only validated actions become stable automation.
-              The system remains inspectable: what ran, why it ran, and what it produced.
-            </p>
-            <ul>
-              <li>Promote only after validation</li>
-              <li>Traceable execution log</li>
-              <li>Determinism as default</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
+                    <article class="stage stage-contextualize" data-stage="contextualize">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 02</p>
+                            <h2>Contextualize</h2>
+                            <div class="stage-sub" lang="de">Kandidatenaktionen in Relation setzen</div>
+                            <p>
+                                Candidate actions are mapped to procedural narratives, temporal markers, and inferred intent.
+                                Context frames narrow the field before any proposal is composed.
+                            </p>
+                            <ul>
+                                <li>Heuristics surface intent, risk, and dependencies.</li>
+                                <li>Temporal alignment keeps interactions within active loops.</li>
+                                <li>Confidence envelopes form ahead of proposals.</li>
+                            </ul>
+                        </div>
+                    </article>
 
-    <section class="card wide" aria-label="Use cases">
-      <h2>Use cases</h2>
-      <div class="usecases">
-        <div class="pill">Repeatable lab UI workflows</div>
-        <div class="pill">Admin / operations routines</div>
-        <div class="pill">Cross-app copy / transform / paste</div>
-        <div class="pill">Regression checks for GUI changes</div>
-      </div>
-      <p class="note">If a workflow can’t be replayed deterministically, it’s not ready for automation.</p>
-    </section>
+                    <article class="stage stage-propose" data-stage="propose">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 03</p>
+                            <h2>Propose</h2>
+                            <div class="stage-sub" lang="de">Begründung und Konfidenz</div>
+                            <p>
+                                Proposals pair a precise claim with structured rationale referencing the observation ledger.
+                                Confidence bands accompany every assertion, and alternative hypotheses wait in reserve.
+                            </p>
+                            <ul>
+                                <li>Rationales tie to raw evidence and context.</li>
+                                <li>Confidence scoring links to past loop performance.</li>
+                                <li>Fallback proposals queue for lower certainty.</li>
+                            </ul>
+                        </div>
+                    </article>
 
-    <footer class="footer">
-      <div class="footer-left">
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <div class="footer-title">Bullshitbox</div>
-          <div class="footer-sub">
-            <a href="mailto:contact@bullshitbox.ai">contact@bullshitbox.ai</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-right">
-        <a href="https://levelzerocontext.com">levelzerocontext.com</a>
-      </div>
+                    <article class="stage stage-replay" data-stage="replay">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 04</p>
+                            <h2>Replay</h2>
+                            <div class="stage-sub" lang="de">Deterministisches Testbett</div>
+                            <p>
+                                The proposal traverses the deterministic testbed, replaying every decision point, timing signal,
+                                and handshake with the same inputs, layout, and state.
+                            </p>
+                            <ul>
+                                <li>Inputs locked and replayed through the deterministic pipeline.</li>
+                                <li>Replay logs capture operator states and control handoffs.</li>
+                                <li>Outputs are versioned and ready for comparison.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="stage stage-validate" data-stage="validate">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 05</p>
+                            <h2>Validate</h2>
+                            <div class="stage-sub" lang="de">Checks, Assertions, Invarianten</div>
+                            <p>
+                                Assertions and invariants inspect the replay under PASS/FAIL/NEED_HUMAN gates. Every check
+                                reports measurement windows and acceptable drift before a label is considered.
+                            </p>
+                            <ul>
+                                <li>Checks enforce propositions, latency, and coherency invariants.</li>
+                                <li>Failure modes issue immutable evidence for review.</li>
+                                <li>Invariant charts track drift to guide thresholds.</li>
+                            </ul>
+                            <div class="stage-evidence">
+                                <p class="stage-evidence-label">Evidence / Outputs</p>
+                                <div class="stage-evidence-grid">
+                                    <div>
+                                        <strong>Snapshot</strong>
+                                        <code>{"loop":"validate","confidence":0.98,"hash":"7d4f"}</code>
+                                    </div>
+                                    <div>
+                                        <strong>Invariant</strong>
+                                        <span>Latency ≤ 180 ms · PASS</span>
+                                    </div>
+                                    <div>
+                                        <strong>Status</strong>
+                                        <span class="status">PASS · FAIL · NEED_HUMAN</span>
+                                    </div>
+                                </div>
+                                <p class="stage-evidence-note">PASS/FAIL/NEED_HUMAN state pairs every deterministic attempt with evidence.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="stage stage-confirm" data-stage="confirm">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 06</p>
+                            <h2>Confirm</h2>
+                            <div class="stage-sub" lang="de">Menschliches Urteil als Label</div>
+                            <p>
+                                Human reviewers accept, adjust, or reject the validated meaning. Their labels become canonical truth
+                                tokens feeding the loop.
+                            </p>
+                            <ul>
+                                <li>Acceptance metrics boost confidence envelopes.</li>
+                                <li>Adjustments introduce alternative heuristics.</li>
+                                <li>Rejections emit annotated reports into the audit ledger.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="stage stage-integrate" data-stage="integrate">
+                        <div class="stage-bg" aria-hidden="true"></div>
+                        <div class="stage-content">
+                            <p class="stage-eyebrow">Stage 07</p>
+                            <h2>Integrate</h2>
+                            <div class="stage-sub" lang="de">Strategien aktualisieren</div>
+                            <p>
+                                Confirmed truths seed thresholds, rules, models, and heuristics, aligning the loop with the next wave
+                                of validated automation strategies.
+                            </p>
+                            <ul>
+                                <li>Thresholds tune to the latest invariants and operator signals.</li>
+                                <li>Rules import human-approved labels and notes.</li>
+                                <li>Models and heuristics versioned for audit and fallback.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </section>
+            </div>
+        </details>
+
+        <details class="fold fold-case">
+            <summary>One concrete scenario</summary>
+            <div class="fold-content">
+                <section class="case" aria-label="Before and after scenario">
+                    <h3>From brittle repetition to validated automation</h3>
+                    <div class="case-grid">
+                        <article>
+                            <h4>Before</h4>
+                            <p>Legacy PC, sluggish UI, and redundant clicks across scattered forms. Operators replay brittle scripts, monitor drift, and bear the fatigue of constant manual checks.</p>
+                        </article>
+                        <article>
+                            <h4>After</h4>
+                            <p>Bullshitbox records the raw events, proposes an action, replays it deterministically, validates the outcome, seeks minimal human confirmation, and integrates the result into automation.</p>
+                        </article>
+                    </div>
+                    <p class="audit-trail">Audit trail • replay hash stored • PASS/FAIL gate enforced • human confirmation recorded</p>
+                </section>
+            </div>
+        </details>
+
+        <details class="fold fold-usecases">
+            <summary>What it replaces</summary>
+            <div class="fold-content">
+                <section class="use-cases" aria-label="Use cases">
+                    <h3>Bullshit work replacements</h3>
+                    <div class="use-case-grid">
+                        <article>
+                            <h4>Legacy UI task replacement</h4>
+                            <p>Automate brittle GUIs where button positions change and manual drift is the norm.</p>
+                        </article>
+                        <article>
+                            <h4>Repeatable QA checks</h4>
+                            <p>Seal regression test chains behind deterministic replays that never skip a click.</p>
+                        </article>
+                        <article>
+                            <h4>Nightly reconciliations</h4>
+                            <p>Replace spreadsheets and drift-prone macros with evidence-backed loop executions.</p>
+                        </article>
+                        <article>
+                            <h4>Operator assist for slow systems</h4>
+                            <p>Overlay a Bullshitbox session to rerun demanding workflows while humans monitor progress.</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </details>
+    </main>
+
+    <footer>
+        <p>Bullshitbox · validated meaning infrastructure for conscious automation.</p>
+        <p><a href="mailto:contact@bullshitbox.ai">contact@bullshitbox.ai</a></p>
     </footer>
-
-  </main>
 </body>
 
 </html>
